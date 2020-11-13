@@ -8,4 +8,5 @@ npm install
 
 # run
 npm start
+
 open the index.html with your browser

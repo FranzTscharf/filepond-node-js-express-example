@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilePond Demo</title>
+    <link href="./dist/filepond.css" rel="stylesheet">
+    <!-- Filepond stylesheet -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+</head>
+<body>
+
+    
+  <!-- We'll transform this input into a pond -->
+  <input type="file" class="filepond">
+
+  <!-- Load FilePond library -->
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  
+    <script>
+        
+        // Get a reference to the file input element
+        const inputElement = document.querySelector('input[type="file"]');
+
+        // Create the FilePond instance
+        const pond = FilePond.create(inputElement, {
+            name: "images",
+            allowMultiple: true,
+            allowReorder: true,
+            server: "http://localhost:3000/protected/portal-space/spaces/image/upload"
+        });
+
+        // Easy console access for testing purposes
+        window.pond = pond;
+
+    </script>
+
+</body>
+</html>
